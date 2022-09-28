@@ -236,7 +236,10 @@ I'll do the **hard**.
         - We track transitive type alias use. Sounds way too simple in hindsight, why did I wonder about this before?
   - W39: 
     - Track transitive type aliases and write unit tests for it.
+      - zero progress due to covid vaccine knocking me out
     - Figure out a plan for type class instances.
+      - zero progress due to covid vaccine knocking me out
+    - Have made some changes in the erlang-specific stdlib implementation together with Edvard. Backup plan in case the main task doesn't get merged in in time. I assume it'll be merged within a week or two.
   - W40: 
     - Implement tracking logic for type class instances.
     - Make a release X5 with the binaries and try them out.
