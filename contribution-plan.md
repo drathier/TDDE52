@@ -241,16 +241,25 @@ I'll do the **hard**.
       - zero progress due to covid vaccine knocking me out
     - Have made some changes in the erlang-specific stdlib implementation together with Edvard. Backup plan in case the main task doesn't get merged in in time. I assume it'll be merged within a week or two.
   - W40: 
-    - Implement tracking logic for type class instances.
+    - Erlang-specific stdlib changes are on hold because they want to do all breaking changes at once. Lively discussions for a week now about how to do this right.
+    - Merged in upstream.
+    - Track transitive type aliases and write unit tests for it.
+      - seems to work, but still no unit tests for them
+    - 
+    - B:Figure out a plan for type class instances.
     - Make a release X5 with the binaries and try them out.
+      - done, but all changes didn't make it in
+    - Implement tracking logic for type class instances.
   - W41: 
-    - Write unit tests for type class instance tracking.
+    - Write unit tests for transitive type aliases.
+    - Make a release X6 with the binaries and try them out.
     - Might miss seminar this week, can attend remotely
   - W42: no seminar
     - Possibly no work
   - W43: no seminar
     - Possibly no work
   - W44: 
+    - Write unit tests for type class instance tracking.
     - Two paths:
       - Everything worked fine; clean it up, write tests, get it reviewed and ship it
       - Something didn't work out; go fix it.
