@@ -1,7 +1,9 @@
 # What's Purescript?
 - Pure functional programming language
-  - you describe what should happen, instead of step-by-step doing the changes yourself
-- Think "Haskell 2.0"
+  - Most of the time we build and transform immutable data structures
+  - Usually results in shorter programs, which are easier to test
+  - Ever used someArray.map(function(x) {...}) in javascript? That's taken from pure functional programming.
+- "Haskell 2.0", if that helps
 
 # What we did
 - Edvard: Standard library changes. Compiler error messages. 
@@ -34,6 +36,7 @@ purs compile: No files found using pattern: src/**/*.purs
 - If you have an interest in pure functional programming
 - A week of Elm is plenty to know if you'll like working with it 
 - There's lots and lots of low-hanging fruit once you get there, but interest in pure functional programming is basically required, since it's so different from C-style languages. Not hard, but different.
+- The compiler caching task is too large for this course, but there's so many much much easier tasks to do.
 - Some changes are hard to get merged, others get merged in minutes.
 - Discord channel with real experts on the compiler code base
 - Compilers and languages NOT black magic! You can do this too!
