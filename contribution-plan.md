@@ -209,64 +209,78 @@ I'll do the **hard**.
 
 
 
-# Sprint updates
+# Weekly updates
 
-## Sprint 1
-
-- Setup the development environment on my desktop computer. I already have it set up on my laptop.
-- Figure out where I left off when I worked on this last time. 
-- Think it through; when do I need things to be done in order to test it in time and get it merged in?
-  - W36: Course intro, goal: get up early enough to be on-site before the lecture starts
-    - success, 7 minutes to spare
-  - W37: Group forming, goal: find the nerds with high ambitions and form a group with them. Bonus points if all purs devs are in the same group, but not a requirement.
-    - success
-  - W38: Setup and plan the rest of the semester
-    - Write this document
-      - done
-    - Dev env setup
-      - done
-    - Q: What's the smallest possible version of this that could be merged in? I want something merged in with plenty of margin before the course ends.
-      - Don't track explicit imports
-        - Only track "Did the public api of this module change?", ignoring which part of that public api each module depends on
-        - Don't track which of the explicitly imported things are actually used, e.g. for qualified imports
-      - Don't optimize the public api shape file format
-        - It only has to be a hash of the contents, not the actual contents in decodable form. Note for later: concating the string representation of all the things instead of hashing them gives a very good trade-off between performance and debuggability.
-      - How do we track type class instance use? Simple plan seems to be to expose them alongside their type class defs or data decl defs, but does that work? Orphan instances aren't a problem in purescript, but are there other hurdles? Is all needed information there? It has to be since I've got the full ast, but how hard is it really?
-      - How do we track transitive type alias changes?
-        - We track transitive type alias use. Sounds way too simple in hindsight, why did I wonder about this before?
-  - W39: 
-    - Track transitive type aliases and write unit tests for it.
-      - zero progress due to covid vaccine knocking me out
-    - Figure out a plan for type class instances.
-      - zero progress due to covid vaccine knocking me out
-    - Have made some changes in the erlang-specific stdlib implementation together with Edvard. Backup plan in case the main task doesn't get merged in in time. I assume it'll be merged within a week or two.
-  - W40: 
-    - Erlang-specific stdlib changes are on hold because they want to do all breaking changes at once. Lively discussions for a week now about how to do this right.
-    - Merged in upstream.
-    - Track transitive type aliases and write unit tests for it.
-      - seems to work, but still no unit tests for them
-    - 
-    - B:Figure out a plan for type class instances.
-    - Make a release X5 with the binaries and try them out.
-      - done, but all changes didn't make it in
-    - Implement tracking logic for type class instances.
-  - W41: 
-    - Write unit tests for transitive type aliases.
-    - Make a release X6 with the binaries and try them out.
-    - Might miss seminar this week, can attend remotely
-  - W42: no seminar
-    - Possibly no work
-  - W43: no seminar
-    - Possibly no work
-  - W44: 
-    - Write unit tests for type class instance tracking.
-    - Two paths:
-      - Everything worked fine; clean it up, write tests, get it reviewed and ship it
-      - Something didn't work out; go fix it.
-  - W45: 
-    - Might miss seminar this week, can attend remotely
-  - W46: this week intentionally left blank
-  - W47: this week intentionally left blank
-  - W48: this week intentionally left blank
-  - W49: this week intentionally left blank
-  - W50: presentation 
+- W36: Course intro, goal: get up early enough to be on-site before the lecture starts
+  - success, 7 minutes to spare
+- W37: Group forming, goal: find the nerds with high ambitions and form a group with them. Bonus points if all purs devs are in the same group, but not a requirement.
+  - success
+- W38: Setup and plan the rest of the semester
+  - Write this document
+    - done
+  - Dev env setup
+    - done
+  - Q: What's the smallest possible version of this that could be merged in? I want something merged in with plenty of margin before the course ends.
+    - Don't track explicit imports
+      - Only track "Did the public api of this module change?", ignoring which part of that public api each module depends on
+      - Don't track which of the explicitly imported things are actually used, e.g. for qualified imports
+    - Don't optimize the public api shape file format
+      - It only has to be a hash of the contents, not the actual contents in decodable form. Note for later: concating the string representation of all the things instead of hashing them gives a very good trade-off between performance and debuggability.
+    - How do we track type class instance use? Simple plan seems to be to expose them alongside their type class defs or data decl defs, but does that work? Orphan instances aren't a problem in purescript, but are there other hurdles? Is all needed information there? It has to be since I've got the full ast, but how hard is it really?
+    - How do we track transitive type alias changes?
+      - We track transitive type alias use. Sounds way too simple in hindsight, why did I wonder about this before?
+- W39: 
+  - Track transitive type aliases and write unit tests for it.
+    - zero progress due to covid vaccine knocking me out
+  - Figure out a plan for type class instances.
+    - zero progress due to covid vaccine knocking me out
+  - Have made some changes in the erlang-specific stdlib implementation together with Edvard. Backup plan in case the main task doesn't get merged in in time. I assume it'll be merged within a week or two.
+- W40: 
+  - Erlang-specific stdlib changes are on hold because they want to do all breaking changes at once. Lively discussions for a week now about how to do this right.
+  - Merged in upstream.
+  - Track transitive type aliases and write unit tests for it.
+    - seems to work, but still no unit tests for them
+  - 
+  - B:Figure out a plan for type class instances.
+  - Make a release X5 with the binaries and try them out.
+    - done, but all changes didn't make it in
+  - Implement tracking logic for type class instances.
+- W41: 
+  - Write unit tests for transitive type aliases.
+  - Make a release X6 with the binaries and try them out.
+  - Might miss seminar this week, can attend remotely
+- W42: no seminar
+  - No work
+- W43: no seminar
+  - No work
+- W44: 
+  - Write unit tests for type class instance tracking.
+  - Two paths:
+    - Everything worked fine; clean it up, write tests, get it reviewed and ship it
+    - Something didn't work out; go fix it.
+- W45: 
+  - Mid-review
+  - Not happy with progress, unlikely to get caching logic merged during course, switched to some smaller changes to get something merged at all
+  - Happy with knowledge gathering. Switched to bottom-up approach: Instead of starting with a naive solution and making it better, with both false positives and false negatives along the way, I switched to a bottom-up approach where I make sure I use all of the input give to me. This means I'm much less likely to accidentally forget to check for some kind of change and think that something was a cache hit when it shouldn't have been. This makes it much more safe to merge in.
+- W46: 
+  - Continued work on bottom-up approach.
+- W47:
+  - No work
+- W48:
+  - No work
+- W49:
+  - Continued work on bottom-up approach.
+- W50: presentation 
+  - Continued work on bottom-up approach.
+  - Prepared and delivered presentation.
+- W51: 
+  - Continued work on bottom-up approach.
+- W52: 
+  - Sick
+- W01: 
+  - Finished work on bottom-up approach.
+  - Release candidate is out https://github.com/purescript/purescript/pull/4339#issuecomment-1368565115 and https://discord.com/channels/864614189094928394/872650895744176188/1059428187127435335
+    - There's code that checks for false positives and false negatives, dumps the info I'd need to reproduce it as a unit test, and instructions on how to report it.
+    - I'm happy with this. It's likely to be ready-to-merge as-is. Code quality is much better than the previous work. Probability of bad cache hits is very low. 
+- W02:
+  - end of course
