@@ -302,6 +302,7 @@ I'll do the **hard**.
 
 ## closed
 - https://github.com/purescript/purescript/pull/4402
+- https://github.com/drathier/purescript-erl-maps/pull/3 (idk if this counts, we were the only ones on OTP23 so when we upgraded to OTP24 we dropped the PR, but it would've been merged otherwise)
 
 ## merged
 - https://github.com/mdn/content/pull/13822
