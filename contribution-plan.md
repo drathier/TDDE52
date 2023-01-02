@@ -284,3 +284,26 @@ I'll do the **hard**.
     - I'm happy with this. It's likely to be ready-to-merge as-is. Code quality is much better than the previous work. Probability of bad cache hits is very low. 
 - W02:
   - end of course
+
+
+# Contributions
+## unmerged
+### caching-related
+- https://github.com/drathier/purescript/pull/2
+- https://github.com/drathier/purescript/pull/3
+- https://github.com/drathier/purescript/pull/5
+- https://github.com/purescript/purescript/pull/4339
+- https://github.com/purescript/purescript/pull/4339#issuecomment-1368565115
+
+### non-caching-related
+- https://github.com/purerl/purescript-erl-maps/pull/11
+- https://github.com/purerl/purescript-strings/pull/4
+- https://github.com/purerl/purescript-strings/pull/5
+
+## closed
+- https://github.com/purescript/purescript/pull/4402
+
+## merged
+- https://github.com/mdn/content/pull/13822
+- https://github.com/purerl/purerl/pull/25
+- https://github.com/purerl/purescript-erl-maps/pull/10
